@@ -22,6 +22,7 @@ while (true)
     kund.Add(new Customer("Fnatte", "321"));
     kund.Add(new Customer("Tjatte", "213"));
 
+    var apple = new Product
 
 
 

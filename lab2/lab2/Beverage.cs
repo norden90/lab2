@@ -2,5 +2,11 @@
 
 public class Beverage : Products
 {
-    public int dricka { get; set; }
+    private int _beverage;
+
+    public int Beverage
+    {
+        get { return _beverage; }
+        set { _beverage = value; }
+    }
 }
