@@ -2,9 +2,9 @@
 
 public class Sausage : Products
 {
-    public override Sausage AddCart()
+    public override int AddCart()
     {
-        var sausage = new Sausage();
+        var sausage = new int();
         return sausage;
     }
 }

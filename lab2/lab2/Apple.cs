@@ -2,7 +2,7 @@
 
 public class Apple : Products
 {
-    public override Apple AddCart()
+    public override int AddCart()
     {
         throw new NotImplementedException();
     }
