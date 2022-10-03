@@ -10,17 +10,18 @@ using System.Threading.Channels;
 using lab2;
 
 while (true)
-    
-
 
 {
     var kund = new List<Customer>();
     var produkter = new List<Products>();
-    
+
+    var apple = new Apple();
+
+    produkter.Add(apple);
+
     kund.Add(new Customer("Knatte", "123"));
     kund.Add(new Customer("Fnatte", "321"));
     kund.Add(new Customer("Tjatte", "213"));
-
 
     Console.WriteLine("Skapa en ny kund");
 
@@ -33,10 +34,13 @@ while (true)
 
     kund.Add(kund4);
 
-
-
     foreach (var v in kund)
     {
-        Console.WriteLine($" {v.Name} : {v.Password}");
+        Console.WriteLine($"{v.Name} : {v.Password}");
+    }
+
+    foreach (var d in produkter)
+    {
+        Console.WriteLine(d);
     }
 }

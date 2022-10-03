@@ -6,4 +6,5 @@ public abstract class Products
 {
     public static int Price { get; set; }
 
+    public abstract Products AddCart();
 }
