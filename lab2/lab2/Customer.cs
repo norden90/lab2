@@ -1,8 +1,5 @@
 ﻿namespace lab2;
 
-
-
-
 public class Customer
 {
 
@@ -31,36 +28,4 @@ public class Customer
         _cart = new List<Products>();
         
     }
-
-    //    public List<Customer> AddCustomer(Customer customer)
-    //{
-    //    var kund = new List<Customer>();
-        
-    //    Console.WriteLine("Ange ditt namn");
-    //    var tempName = Console.ReadLine();
-    //    Console.WriteLine("Ange ett lösenord");
-    //    var tempPassword = Console.ReadLine();
-    //    _cart = new List<Product>();
-
-    //    kund.Add(new Customer(tempName,tempPassword));
-
-    //    return kund;
-
-    //}
-
-//    internal static List<Customer> AddCustomer()
-//    {
-//        var kund = new List<Customer>();
-
-//        Console.WriteLine("Ange ditt namn");
-//        var tempName = Console.ReadLine();
-//        Console.WriteLine("Ange ett lösenord");
-//        var tempPassword = Console.ReadLine();
-        
-
-//        kund.Add(new Customer(tempName, tempPassword));
-
-//        return kund;
-
-//    }
 }

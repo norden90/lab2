@@ -1,6 +1,6 @@
 ﻿namespace lab2;
 
-public class Dricka : Products
+public class Beverage : Products
 {
     public int dricka { get; set; }
 }
