@@ -11,7 +11,6 @@ public class Customer
     public string Name
     {
         get { return _name; }
-        set { _name = value; }
     }
 
     private string _password;
@@ -19,18 +18,17 @@ public class Customer
     public string Password
     {
         get { return _password; }
-        set { _password = value; }
     }
 
 
-    private List<Product> _cart;
-    public List<Product> Cart { get { return _cart; } }
+    private List<Products> _cart;
+    public List<Products> Cart { get { return _cart; } }
 
     public Customer(string name, string password)
     {
         _name = name;
         _password = password;
-        _cart = new List<Product>();
+        _cart = new List<Products>();
         
     }
 

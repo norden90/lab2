@@ -10,32 +10,36 @@ using System.Threading.Channels;
 using lab2;
 
 while (true)
+    
+
 
 {
     var kund = new List<Customer>();
+    var produkter = new List<Products>();
+    
 
-    var customers = Customer.AddCustomer();
-
-    customers.Add(new Customer("Knatte", "123"));
-    customers.Add(new Customer("Fnatte", "321"));
-    customers.Add(new Customer("Tjatte", "213"));
-
-
-
-//Console.WriteLine("Skapa en ny kund");
-
-//Console.WriteLine("Ange ditt namn");
-//var name = Console.ReadLine();
-//Console.WriteLine("Ange ett lösenord");
-//var password = Console.ReadLine();
-
-//var kund4 = new Customer(name, password);
-
-//customers.Add(kund4);
+    kund.Add(new Customer("Knatte", "123"));
+    kund.Add(new Customer("Fnatte", "321"));
+    kund.Add(new Customer("Tjatte", "213"));
 
 
 
-    foreach (var v in customers)
+
+
+    Console.WriteLine("Skapa en ny kund");
+
+    Console.WriteLine("Ange ditt namn");
+    var name = Console.ReadLine();
+    Console.WriteLine("Ange ett lösenord");
+    var password = Console.ReadLine();
+
+    var kund4 = new Customer(name, password);
+
+    kund.Add(kund4);
+
+
+
+    foreach (var v in kund)
     {
         Console.WriteLine($" {v.Name} : {v.Password}");
     }
