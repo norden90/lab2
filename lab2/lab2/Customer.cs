@@ -34,18 +34,35 @@ public class Customer
         
     }
 
-    public Customer[]AddCustomer(string name, string password)
-    {
+    //    public List<Customer> AddCustomer(Customer customer)
+    //{
+    //    var kund = new List<Customer>();
+        
+    //    Console.WriteLine("Ange ditt namn");
+    //    var tempName = Console.ReadLine();
+    //    Console.WriteLine("Ange ett lösenord");
+    //    var tempPassword = Console.ReadLine();
+    //    _cart = new List<Product>();
 
-        Console.WriteLine("Ange ditt namn");
-        var tempName = Console.ReadLine();
-        Console.WriteLine("Ange ett lösenord");
-        var tempPassword = Console.ReadLine();
+    //    kund.Add(new Customer(tempName,tempPassword));
 
-        var kund = new Customer(tempName, tempPassword);
+    //    return kund;
 
-        return Customer;
+    //}
 
+//    internal static List<Customer> AddCustomer()
+//    {
+//        var kund = new List<Customer>();
 
-    }
+//        Console.WriteLine("Ange ditt namn");
+//        var tempName = Console.ReadLine();
+//        Console.WriteLine("Ange ett lösenord");
+//        var tempPassword = Console.ReadLine();
+        
+
+//        kund.Add(new Customer(tempName, tempPassword));
+
+//        return kund;
+
+//    }
 }
