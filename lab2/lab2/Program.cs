@@ -22,7 +22,6 @@ while (true)
     kund.Add(new Customer("Tjatte", "213"));
 
 
-
     Console.WriteLine("Skapa en ny kund");
 
     Console.WriteLine("Ange ditt namn");

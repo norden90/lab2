@@ -28,4 +28,9 @@ public class Customer
         _cart = new List<Products>();
         
     }
+
+    public override string ToString()
+    {
+        return $"{0} and {1}";
+    }
 }
