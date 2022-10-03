@@ -17,13 +17,9 @@ while (true)
     var kund = new List<Customer>();
     var produkter = new List<Products>();
     
-
     kund.Add(new Customer("Knatte", "123"));
     kund.Add(new Customer("Fnatte", "321"));
     kund.Add(new Customer("Tjatte", "213"));
-
-    var apple = new Product
-
 
 
 
