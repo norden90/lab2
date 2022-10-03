@@ -2,5 +2,5 @@
 
 public class Dricka : Product
 {
-    
+    public int dricka { get; set; }
 }
