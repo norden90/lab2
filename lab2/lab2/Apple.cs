@@ -6,7 +6,7 @@ public class Apple : Products
     {
         Name = "apple";
         Price = 15;
-        ProductId = 1;
+        ProductId = 001;
 
     }
 

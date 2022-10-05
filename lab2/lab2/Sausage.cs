@@ -6,7 +6,7 @@ public class Sausage : Products
     {
         Name = "Sausage";
         Price = 35;
-        ProductId = 3;
+        ProductId = 003;
     }
    
 }

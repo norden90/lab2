@@ -15,8 +15,8 @@ while (true)
     var kund = new List<Customer>();
     var produkter = new List<Products>(); 
 
-    var apple = new Apple("Apple", 15, );
-    var beverage = new Beverage("Beverage", 35);
+    var apple = new Apple("Apple", 15, 1 );
+    var beverage = new Beverage("Beverage", 35, 2);
     var sausage = new Sausage("Sausage", 25, 3);
 
     produkter.Add(apple);
@@ -48,11 +48,6 @@ while (true)
     {
         Console.WriteLine($"{d.Name} kostar {d.Price}");
         
-    }
-
-    foreach (var c in produkter)
-    {
-        //Console.WriteLine($"{c.} kostar {c.Price}");
     }
 
     Console.ReadKey();

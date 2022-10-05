@@ -6,6 +6,6 @@ public class Beverage : Products
     {
         Name = "beverage";
         Price = 25;
-        ProductId = 2;
+        ProductId = 002;
     }
 }
