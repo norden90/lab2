@@ -14,9 +14,6 @@ public class Customer
         get { return _password; }
     }
 
-    //private List<InCart> _inCart;
-    //public List<InCart> InCart { get { return _inCart; } }
-
     private List<Products> _cart;
     public List<Products> Cart { get { return _cart; } }
 
