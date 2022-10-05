@@ -2,8 +2,13 @@
 
 public class Beverage : Products
 {
-    public override Beverage AddCart()
+    public Beverage(string name, int price) : base(name, price)
     {
-        throw new NotImplementedException();
+
+    }
+    public override Products AddCart()
+    {
+        var cart = new int();
+        return cart;
     }
 }

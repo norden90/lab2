@@ -4,7 +4,16 @@ namespace lab2;
 
 public abstract class Products
 {
-    public static int Price { get; set; }
+    protected Products(string name, int price)
+    {
+        Name = name;
+        Price = price;
+    }
 
-    public abstract int AddCart();
+    public string Name { get; set; }
+    
+    public int Price { get; set; }
+
+    public abstract Products AddCart();
+
 }

@@ -2,8 +2,17 @@
 
 public class Apple : Products
 {
-    public override int AddCart()
+    
+
+    public override Products AddCart()
     {
-        throw new NotImplementedException();
+        var cart = new int();
+        return cart;
+    }
+
+
+    public Apple(string name, int price) : base(name, price)
+    {
+
     }
 }

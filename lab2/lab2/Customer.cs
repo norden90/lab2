@@ -14,6 +14,9 @@ public class Customer
         get { return _password; }
     }
 
+    //private List<InCart> _inCart;
+    //public List<InCart> InCart { get { return _inCart; } }
+
     private List<Products> _cart;
     public List<Products> Cart { get { return _cart; } }
 
@@ -26,7 +29,7 @@ public class Customer
     }
     //public int CalcCart(int Cart)
     //{
-        
+
     //}
 
     //public string CheckCart()
@@ -43,8 +46,15 @@ public class Customer
     //{
 
     //}
+
+    //public int CashOut()
+    //{
+
+    //}
     public override string ToString()
     {
         return $"{0} and {1}";
     }
 }
+
+
