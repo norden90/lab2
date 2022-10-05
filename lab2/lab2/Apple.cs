@@ -2,14 +2,12 @@
 
 public class Apple : Products
 {
-    public Apple(string name, int price, int ) : base(name, price)
+    public Apple(string name, int price, int productId) : base(name, price, productId)
     {
+        Name = "apple";
+        Price = 15;
+        ProductId = 1;
 
-    }
-    public override Products AddCart()
-    {
-        var cart = new int();
-        return cart;
     }
 
 }

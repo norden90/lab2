@@ -12,22 +12,16 @@ using lab2;
 while (true)
 
 {
-
-
     var kund = new List<Customer>();
     var produkter = new List<Products>(); 
 
-    var apple = new Apple("Apple", 15);
+    var apple = new Apple("Apple", 15, );
     var beverage = new Beverage("Beverage", 35);
-    var sausage = new Sausage("Sausage", 25, TODO);
+    var sausage = new Sausage("Sausage", 25, 3);
 
     produkter.Add(apple);
     produkter.Add(beverage);
     produkter.Add(sausage);
-
-    
-
-    
 
     kund.Add(new Customer("Andreas", "666"));
     kund.Add(new Customer("Knatte", "123"));

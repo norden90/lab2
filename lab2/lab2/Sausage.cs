@@ -2,16 +2,11 @@
 
 public class Sausage : Products
 {
-    public Sausage(string name, int price, int productId, int quantity) : base(name, price, productId, quantity)
+    public Sausage(string name, int price, int productId) : base(name, price, productId)
     {
         Name = "Sausage";
-        Price = 25;
+        Price = 35;
         ProductId = 3;
     }
-    public override Products AddCart()
-    {
-        
-
-        return sausage;
-    }
+   
 }
