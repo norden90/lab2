@@ -30,14 +30,14 @@ while (true)
 
     Console.WriteLine("Skapa en ny kund");
 
-    //Console.WriteLine("Ange ditt namn");  Skapa en ny kund! 
-    //var name = Console.ReadLine();
-    //Console.WriteLine("Ange ett lösenord");
-    //var password = Console.ReadLine();
+    Console.WriteLine("Ange ditt namn"); /*Skapa en ny kund!*/
+    var name = Console.ReadLine();
+    Console.WriteLine("Ange ett lösenord");
+    var password = Console.ReadLine();
 
-    //var kund4 = new Customer(name, password);
+    var kund4 = new Customer(name, password);
 
-    //kund.Add(kund4);
+    kund.Add(kund4);
 
     foreach (var v in kund)
     {

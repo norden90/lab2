@@ -4,18 +4,20 @@ namespace lab2;
 
 public abstract class Products
 {
-    protected Products(string name, int price, int productId)
+    protected Products(string name, int price, int productId, int amount)
     {
         Name = name;
         Price = price;
         ProductId = productId;
-        
+        Amount = amount;
+
     }
 
     public string Name { get; set; }
     
     public int Price { get; set; }
     public int ProductId { get; set; }
+    public int Amount{ get; set; }
 
 
     //public abstract Products AddCart();
