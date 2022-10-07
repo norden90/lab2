@@ -1,54 +1,75 @@
-﻿//Skapa en konsollaplikation som skall agera som en enkel affär.
-
-//När programmet körs så ska man få se någon form av meny där man ska kunna välja att registrera ny kund eller logga in.
-
-//Därefter ska ytterligare en meny visas där man ska kunna välja att handla, se kundvagn eller gå till kassan.
-
-
+﻿using System;
 using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
 using System.Threading.Channels;
 using lab2;
 
 while (true)
-
+    
 {
-    var kund = new List<Customer>();
+    var kunder = new List<Customer>();
     var produkter = new List<Products>(); 
 
-    var apple = new Apple("Apple", 15, 1 );
-    var beverage = new Beverage("Beverage", 35, 2);
-    var sausage = new Sausage("Sausage", 25, 3);
+    var apple = new Apple("apple", 15, 0);
+    var beverage = new Beverage("Beverage", 35, 0);
+    var sausage = new Sausage("Sausage", 25, 0);
 
     produkter.Add(apple);
     produkter.Add(beverage);
     produkter.Add(sausage);
 
-    kund.Add(new Customer("Andreas", "666"));
-    kund.Add(new Customer("Knatte", "123"));
-    kund.Add(new Customer("Fnatte", "321"));
-    kund.Add(new Customer("Tjatte", "213"));
 
-    Console.WriteLine("Skapa en ny kund");
 
-    Console.WriteLine("Ange ditt namn"); /*Skapa en ny kund!*/
-    var name = Console.ReadLine();
-    Console.WriteLine("Ange ett lösenord");
-    var password = Console.ReadLine();
 
-    var kund4 = new Customer(name, password);
+    kunder.Add(new Customer("Andreas", "666"));
+    kunder.Add(new Customer("Knatte", "123"));
+    kunder.Add(new Customer("Fnatte", "321"));
+    kunder.Add(new Customer("Tjatte", "213"));
+    
+    var andreas = kunder.FirstOrDefault(c => c.Name == "Andreas");
 
-    kund.Add(kund4);
+    andreas.Cart.Add(sausage);
+    andreas.Cart.Add(apple);
+    andreas.Cart.Add(sausage);
+   
 
-    foreach (var v in kund)
+    foreach (var v in kunder)
     {
-        Console.WriteLine($"{v.Name} : {v.Password} {v.Cart}");
+        Console.WriteLine($"{v.Name} : {v.Password}");
     }
 
-    foreach (var d in produkter)
+    //foreach (var d in produkter)
+    //{
+    //    Console.WriteLine($"{d.Name} kostar {d.Price}");
+    //}
+    int sum = 0;
+
+    foreach (var a in kunder)
     {
-        Console.WriteLine($"{d.Name} kostar {d.Price}");
-        
+        foreach (var k in a.Cart)
+
+        {
+            Console.WriteLine($"{k.Name} kostar {k.Price}");
+            sum += k.Price;
+        } 
     }
 
+    Console.WriteLine(sum);
+
+    //if (andreas.Cart.Contains(sausage))
+    //{
+    //    Console.WriteLine("Har korvar.");
+    //}
+    //else
+    //{
+    //    Console.WriteLine("har ingen dryck!");
+    //}
     Console.ReadKey();
 }
+
+
+
+
+
+
+    

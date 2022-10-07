@@ -4,11 +4,10 @@ namespace lab2;
 
 public abstract class Products
 {
-    protected Products(string name, int price, int productId, int amount)
+    protected Products(string name, int price, int amount)
     {
         Name = name;
         Price = price;
-        ProductId = productId;
         Amount = amount;
 
     }
