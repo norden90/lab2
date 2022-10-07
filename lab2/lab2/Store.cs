@@ -59,11 +59,10 @@ while (true)
 
     foreach (var a in kunder)
     {
-        Console.WriteLine($"Hej {a.Name}, det här har du i din kundvagn");
         foreach (var k in a.Cart)
 
         {
-            Console.WriteLine($"Du har en {k.Name}, kostar {k.Price}");
+            
         }
     }
     
