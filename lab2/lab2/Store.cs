@@ -14,9 +14,9 @@ while (true)
     var beverage = new Beverage("Beverage", 35, 0);
     var sausage = new Sausage("Sausage", 25, 0);
 
-    produkter.Add(apple);
-    produkter.Add(beverage);
-    produkter.Add(sausage);
+    //produkter.Add(apple);
+    //produkter.Add(beverage);
+    //produkter.Add(sausage);
 
 
 
@@ -27,34 +27,115 @@ while (true)
     kunder.Add(new Customer("Tjatte", "213"));
     
     var andreas = kunder.FirstOrDefault(c => c.Name == "Andreas");
+    
+    //andreas.Cart.Add(sausage);
+    //andreas.Cart.Add(apple);
+    //andreas.Cart.Add(sausage);
 
-    andreas.Cart.Add(sausage);
-    andreas.Cart.Add(apple);
-    andreas.Cart.Add(sausage);
-   
+    AddCart();
 
-    foreach (var v in kunder)
+
+    void AddCart()
     {
-        Console.WriteLine($"{v.Name} : {v.Password}");
+        
+        Console.WriteLine($"Hej {andreas.Name}! Vad vill du lägga till i din kundvagn?");
+
+        andreas.Cart.Add(sausage);
+        andreas.Cart.Add(apple);
+        andreas.Cart.Add(sausage);
+
+        foreach (var a in kunder)
+        {
+            foreach (var k in a.Cart)
+
+            {
+                Console.WriteLine($"Du har en {k.Name}, kostar {k.Price}");
+            }
+        }
+
+        Console.ReadKey();
+
     }
+
+    foreach (var a in kunder)
+    {
+        Console.WriteLine($"Hej {a.Name}, det här har du i din kundvagn");
+        foreach (var k in a.Cart)
+
+        {
+            Console.WriteLine($"Du har en {k.Name}, kostar {k.Price}");
+        }
+    }
+    
+
+    //void CheckCart(List<Products> productsList)
+    //{
+    //    Console.WriteLine($"Hej {andreas.Name}! Här är din kundvagn!");
+
+    //    foreach (var a in kunder)
+    //    {
+    //        foreach (var k in a.Cart)
+
+    //        {
+    //            Console.WriteLine($"Du har en {k.Name}, kostar {k.Price}");
+    //        }
+    //    }
+    //}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //foreach (var a in kunder)
+    //{
+    //    foreach (var k in a.Cart)
+
+    //    {
+    //        Console.WriteLine($"{k.Name} kostar {k.Price}");
+    //    }
+    //}
+
+    //foreach (var v in kunder)
+    //{
+    //    Console.WriteLine($"{v.Name} : {v.Password}");
+    //}
 
     //foreach (var d in produkter)
     //{
     //    Console.WriteLine($"{d.Name} kostar {d.Price}");
     //}
-    int sum = 0;
 
-    foreach (var a in kunder)
-    {
-        foreach (var k in a.Cart)
+    //int sum = 0;
 
-        {
-            Console.WriteLine($"{k.Name} kostar {k.Price}");
-            sum += k.Price;
-        } 
-    }
+    //foreach (var a in kunder)
+    //{
+    //    foreach (var k in a.Cart)
 
-    Console.WriteLine(sum);
+    //    {
+    //        Console.WriteLine($"{k.Name} kostar {k.Price}");
+    //        sum += k.Price;
+    //    }
+    //}
+
+    //Console.WriteLine(sum);
 
     //if (andreas.Cart.Contains(sausage))
     //{

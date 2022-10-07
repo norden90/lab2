@@ -26,21 +26,6 @@ public class Customer
         _cart = new List<Products>();
     }
 
-    //public int CalcCart(int Cart)
-    //{
-
-    //}
-
-    //public Products AddCart()
-    //{
-
-    //}
-
-
-    //public string CheckCart()
-    //{
-
-    //}
 
     //public int CashOut()
     //{
