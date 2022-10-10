@@ -1,34 +1,38 @@
 ﻿using System;
 using System.ComponentModel;
+using System.ComponentModel.Design;
 using System.Diagnostics.CodeAnalysis;
+using System.IO.Compression;
 using System.Threading.Channels;
 using lab2;
 
 
 var kunder = new List<Customer>();
+var produkter = new List<Products>();
 
+kunder.Add(new Customer("Andreas", "k"));
 kunder.Add(new Customer("Knatte", "123"));
 kunder.Add(new Customer("Fnatte", "321"));
 kunder.Add(new Customer("Tjatte", "213"));
-
-var produkter = new List<Products>();
 
 var apple = new Apple("apple", 15, 0);
 var beverage = new Beverage("Beverage", 35, 0);
 var sausage = new Sausage("Sausage", 25, 0);
 
+//var andreas = kunder.FirstOrDefault(c => c.Cart == "Andreas");
+
+//andreas.Cart.Add(sausage);
+
 
 while (true)
 {
     
-    
-
     Console.Clear();
     Console.WriteLine("Välkommen till min butik!");
     Console.WriteLine("\n Var god och välj i menyn\n" +
-                      "[A] Lägg till produkt \n" +
+                      "[A] Lägg till en kund \n" +
                       "[S] Visa Lista \n" +
-                      "[D] Nuvarande passagerare \n" +
+                      "[D] Logga in \n" +
                       "[F] Antal platser kvar \n" +
                       "[G] Genomsnittsålder \n" +
                       "[Q] Avsluta simulatorn\n" +
@@ -54,6 +58,7 @@ while (true)
         }
         case ConsoleKey.D:
         {
+            LogIn();
             break;
         }
         case ConsoleKey.F:
@@ -70,7 +75,7 @@ while (true)
             Environment.Exit(0);
             return;
         }
-        
+
     }
 
 }
@@ -94,6 +99,31 @@ void ShowList(List<Customer> kund)
     }
     Console.ReadKey();
 }
+
+void LogIn()
+{
+
+    Console.WriteLine("Skriv in ditt namn:");
+    var username = Console.ReadLine();
+
+    Console.WriteLine("Skriv in ett lösenord:");
+    var password = Console.ReadLine();
+
+    foreach (var a in kunder)
+    {
+        if (a.Name == username && a.Password == password)
+        {
+            Console.WriteLine($"Du finns! {a.Name} ");
+            Console.ReadKey();
+        }
+        else
+        {
+            break;
+        }
+    }
+}
+         
+
 
 
 

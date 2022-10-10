@@ -3,21 +3,7 @@ using System.Reflection;
 
 namespace lab2;
 
-//CheckCart(andreas.Cart);
 
-//void CheckCart(List<Products> productsList)
-//{
-//    Console.WriteLine($"Hej {andreas.Name}! Här är din kundvagn!");
-
-//    foreach (var a in kunder)
-//    {
-//        foreach (var k in a.Cart)
-
-//        {
-//            Console.WriteLine($"Du har en {k.Name}, kostar {k.Price}");
-//        }
-//    }
-//}
 
 //CalcCart();
 
@@ -49,9 +35,9 @@ namespace lab2;
 
 //    Console.WriteLine($"Hej {andreas.Name}! Vad vill du lägga till i din kundvagn?");
 
-//    andreas.Cart.Add(sausage);
-//    andreas.Cart.Add(apple);
-//    andreas.Cart.Add(sausage);
+    //andreas.Cart.Add(sausage);
+    //andreas.Cart.Add(apple);
+    //andreas.Cart.Add(sausage);
 
 //    foreach (var a in kunder)
 //    {
@@ -147,66 +133,50 @@ namespace lab2;
 //    Console.WriteLine("har ingen dryck!");
 //}
 
+//void CheckCart(List<Products> productsList)
+//{
+//    Console.WriteLine($"Hej {andreas.Name}! Här är din kundvagn!");
 
+//    foreach (var a in kunder)
+//    {
+//        foreach (var k in a.Cart)
 
-
-
-
-
-
-
-
-
-//        Console.Clear(); //val av meny
-//        Console.WriteLine("Välkommen till min butik!");
-//        Console.WriteLine("\n Var god och välj i menyn\n" +
-//                          "[A] Lägg till produkt \n" +
-//                          "[S] Visa totala åldern \n" +
-//                          "[D] Nuvarande passagerare \n" +
-//                          "[F] Antal platser kvar \n" +
-//                          "[G] Genomsnittsålder \n" +
-//                          "[Q] Avsluta simulatorn\n" +
-//                          "                      \n" +
-//                          "       _______________\n" +
-//                          "    _ / _ |[][][][][] | - -\n" +
-//                          "   (      Västtrafik  | - -\n" +
-//                          "   = --OO------ - OO-- = dwb\n ");
-
-//        ConsoleKeyInfo inputFromUser = Console.ReadKey(true);
-//        switch (inputFromUser.Key)
 //        {
-
-//            case ConsoleKey.A: //Val av tagent öppnar en viss del av menyn.
-//            {
-//                AddCart();//anropa metod
-//                break;
-//            }
-//            case ConsoleKey.S:
-//            {
-//                total_age();
-//                break;
-//            }
-//            case ConsoleKey.D:
-//            {
-//                print_bus();
-//                break;
-//            }
-//            case ConsoleKey.F:
-//            {
-//                fria_säten();
-//                break;
-//            }
-//            case ConsoleKey.G:
-//            {
-//                average_age();
-//                break;
-//            }
-
-//            case ConsoleKey.Q:
-//            {
-//                Environment.Exit(0);
-//                return;
-//            }
+//            Console.WriteLine($"Du har en {k.Name}, kostar {k.Price}");
 //        }
+//    }
+//}
+
+
+
+//if (username == a.Name && password == a.Password)
+//{
+//    Console.WriteLine("Du har loggat in! Välkommen");
+//    Console.ReadLine();
+//    Console.ReadKey();
+//    break;
+//}
+//else if (username == a.Name && password != a.Password)
+//{
+//    Console.WriteLine("Du har skrivit fel lösenord!");
+//    Console.WriteLine("Försök igen!");
+//    break;
+//}
+//else if (username != a.Name && password != a.Password)
+//{
+//    Console.WriteLine("Användaren finns inte, vill du skapa en ny?\n" +
+//                      "1: Ja\n" +
+//                      "2: Nej");
+//    var temp = Console.ReadLine();
+//    if (temp == "1")
+//    {
+//        kunder.Add(AddCustomer());
+
+//    }
+//    else if (temp == "2")
+//    {
+//        Console.WriteLine("Återgår till loginsidan");
+//        Console.ReadKey();
+//        LogIn();
 //    }
 //}

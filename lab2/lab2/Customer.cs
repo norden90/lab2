@@ -60,10 +60,10 @@ public class Customer
     //}
 
 
-    //public override string ToString()
-    //{
-    //    return $"Name: {Name} and Lösenord: {Password} Kundvagn: {Cart}";
-    //}
+    public override string ToString()
+    {
+        return $"Name: {Name} and Lösenord: {Password} Kundvagn: {Cart}";
+    }
 }
 
 
