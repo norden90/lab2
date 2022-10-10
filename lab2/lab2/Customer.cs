@@ -4,6 +4,7 @@ public class Customer
 {
     private string _password;
     private string _name;
+    private List<Products> _cart;
 
     public string Name
     {
@@ -13,23 +14,19 @@ public class Customer
     {
         get { return _password; }
     }
-
-    private List<Products> _cart;
-    public List<Products> Cart { get { return _cart; } }
+    public List<Products> Cart
+    {
+        get { return _cart; }
+    }
 
     public Customer(string name, string password)
     {
         _name = name;
         _password = password;
         _cart = new List<Products>();
-        
     }
-    //public int CalcCart(int Cart)
-    //{
 
-    //}
-
-    //public string CheckCart()
+    //public int CashOut()
     //{
 
     //}
@@ -44,14 +41,29 @@ public class Customer
 
     //}
 
-    //public int CashOut()
+    //void CalcCart()
     //{
+    //    int sum = 0;
 
+    //    foreach (var a in kunder)
+    //    {
+    //        foreach (var s in a.Cart)
+    //        {
+    //            s.Amount++;
+    //            sum += s.Price;
+    //        }
+    //    }
+    //    Console.WriteLine($"Din totala kostnad för alla produkter är: {sum}\n" +
+    //    $"Du har {apple.Amount} {apple.Name}" +
+    //                      $"Du har {sausage.Amount} {sausage.Name}" +
+    //                      $"{beverage.Amount} ");
     //}
-    public override string ToString()
-    {
-        return $"{0} and {1}";
-    }
+
+
+    //public override string ToString()
+    //{
+    //    return $"Name: {Name} and Lösenord: {Password} Kundvagn: {Cart}";
+    //}
 }
 
 

@@ -2,10 +2,10 @@
 
 public class Beverage : Products
 {
-    public Beverage(string name, int price, int productId) : base(name, price, productId)
+    public Beverage(string name, int price, int amount) : base(name, price, amount)
     {
-        Name = "beverage";
-        Price = 25;
-        ProductId = 002;
+        Name = name;
+        Price = price;
+        Amount = 0;
     }
 }
