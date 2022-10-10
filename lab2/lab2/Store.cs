@@ -74,7 +74,6 @@ while (true)
     }
 
 }
-
 Customer AddCustomer()
 
 {
@@ -85,6 +84,7 @@ Customer AddCustomer()
 
     return kund;
 }
+
 void ShowList(List<Customer> kund)
 {
 
