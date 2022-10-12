@@ -26,40 +26,6 @@ public class Customer
         _cart = new List<Products>();
     }
 
-    //public int CashOut()
-    //{
-
-    //}
-
-    //public string LogIn()
-    //{
-
-    //}
-
-    //public string LogOut()
-    //{
-
-    //}
-
-    //void CalcCart()
-    //{
-    //    int sum = 0;
-
-    //    foreach (var a in kunder)
-    //    {
-    //        foreach (var s in a.Cart)
-    //        {
-    //            s.Amount++;
-    //            sum += s.Price;
-    //        }
-    //    }
-    //    Console.WriteLine($"Din totala kostnad för alla produkter är: {sum}\n" +
-    //    $"Du har {apple.Amount} {apple.Name}" +
-    //                      $"Du har {sausage.Amount} {sausage.Name}" +
-    //                      $"{beverage.Amount} ");
-    //}
-
-
     public override string ToString()
     {
 

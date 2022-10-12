@@ -123,8 +123,39 @@ void LogIn()
         }
     }
 }
-         
 
+void CalcCart()
+{
+    int sum = 0;
+
+    foreach (var a in kunder)
+    {
+        foreach (var s in a.Cart)
+        {
+            s.Amount++;
+            sum += s.Price;
+        }
+    }
+    Console.WriteLine($"Din totala kostnad för alla produkter är: {sum}\n" +
+    $"Du har {apple.Amount} {apple.Name}" +
+                      $"Du har {sausage.Amount} {sausage.Name}" +
+                      $"{beverage.Amount} ");
+}
+
+void LogOut()
+{
+
+}
+
+void Start()
+{
+
+}
+
+void CashOut()
+{
+
+}
 
 
 
