@@ -23,6 +23,7 @@ var sausage = new Sausage("Sausage", 25, 0);
 
 //andreas.Cart.Add(sausage);
 
+Customer? loggedInCustomer = null;
 
 while (true)
 {

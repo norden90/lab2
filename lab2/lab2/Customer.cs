@@ -62,8 +62,24 @@ public class Customer
 
     public override string ToString()
     {
-        return $"Name: {Name} and Lösenord: {Password} Kundvagn: {Cart}";
+
+        var message = string.Empty;
+        var counter = 0;
+
+        message += $"Namn: {Name}\n";
+        message += $"Password: {Password}\n";
+        message += $"Kundvagn: ";
+
+        foreach (var produkter in Cart)
+        {
+
+            counter++;
+            if (counter == produkter.Amount)
+            {
+                message += $"{produkter.Name}: {produkter.Price * produkter.Amount}";
+                counter = 0;
+            }
+        }
+        return message;
     }
 }
-
-
