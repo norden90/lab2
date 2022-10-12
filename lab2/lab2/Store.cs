@@ -31,12 +31,13 @@ while (true)
     Console.Clear();
     Console.WriteLine("Välkommen till min butik!");
     Console.WriteLine("\n Var god och välj i menyn\n" +
-                      "[A] Lägg till en kund \n" +
-                      "[S] Visa Lista \n" +
-                      "[D] Logga in \n" +
-                      "[F] Antal platser kvar \n" +
-                      "[G] Genomsnittsålder \n" +
-                      "[Q] Avsluta simulatorn\n" +
+                      "[A] Lägg till varor. \n" +
+                      "[S] Vad finns det för varor? \n" +
+                      "[D] Lägga till produkter.\n" +
+                      "[F] Kolla i din kundvagn.\n" +
+                      "[G] Betala dina varor.\n" +
+                      "[T] Vilka kunder finns i butiken?" +
+                      "[Q] Logga ut\n" +
                       "                      \n" +
                       "       _______________\n" +
                       "    _ / _ |[][][][][] | - -\n" +
@@ -47,6 +48,11 @@ while (true)
     switch (inputFromUser.Key)
     {
 
+        //case ConsoleKey.A:  //Lägg till i LogIn().
+        //{
+        //    kunder.Add(AddCustomer());
+        //    break;
+        //}
         case ConsoleKey.A:
         {
             kunder.Add(AddCustomer());
@@ -59,15 +65,22 @@ while (true)
         }
         case ConsoleKey.D:
         {
-            LogIn();
+            AddCart();
             break;
         }
         case ConsoleKey.F:
         {
+            CheckCart();
             break;
         }
         case ConsoleKey.G:
         {
+            CashOut();
+            break;
+        }
+        case ConsoleKey.T:
+        {
+            ShowList(kunder);
             break;
         }
 
@@ -142,6 +155,11 @@ void CalcCart()
                       $"{beverage.Amount} ");
 }
 
+void CheckCart()
+{
+
+}
+
 void LogOut()
 {
 
@@ -153,6 +171,11 @@ void Start()
 }
 
 void CashOut()
+{
+
+}
+
+void AddCart()
 {
 
 }
