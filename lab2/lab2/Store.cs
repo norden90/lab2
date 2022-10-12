@@ -140,12 +140,12 @@ void MainMenu()
 
             case ConsoleKey.A:
             {
-                    ShowProducts();
+                ShowProducts();
                 break;
             }
             case ConsoleKey.S:
             {
-                ShowList(kunder);
+                AddCart();
                 break;
             }
             case ConsoleKey.D:
