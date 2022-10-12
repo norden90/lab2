@@ -25,74 +25,8 @@ var sausage = new Sausage("Sausage", 25, 0);
 
 Customer? loggedInCustomer = null;
 
-while (true)
-{
-    
-    Console.Clear();
-    Console.WriteLine("Välkommen till min butik!");
-    Console.WriteLine("\n Var god och välj i menyn\n" +
-                      "[A] Lägg till varor. \n" +
-                      "[S] Vad finns det för varor? \n" +
-                      "[D] Lägga till produkter.\n" +
-                      "[F] Kolla i din kundvagn.\n" +
-                      "[G] Betala dina varor.\n" +
-                      "[T] Vilka kunder finns i butiken?" +
-                      "[Q] Logga ut\n" +
-                      "                      \n" +
-                      "       _______________\n" +
-                      "    _ / _ |[][][][][] | - -\n" +
-                      "   (      FoodStore   | - -\n" +
-                      "   = --OO------ - OO-- = dwb\n ");
+Start();
 
-    ConsoleKeyInfo inputFromUser = Console.ReadKey(true);
-    switch (inputFromUser.Key)
-    {
-
-        //case ConsoleKey.A:  //Lägg till i LogIn().
-        //{
-        //    kunder.Add(AddCustomer());
-        //    break;
-        //}
-        case ConsoleKey.A:
-        {
-            kunder.Add(AddCustomer());
-            break;
-        }
-        case ConsoleKey.S:
-        {
-            ShowList(kunder);
-            break;
-        }
-        case ConsoleKey.D:
-        {
-            AddCart();
-            break;
-        }
-        case ConsoleKey.F:
-        {
-            CheckCart();
-            break;
-        }
-        case ConsoleKey.G:
-        {
-            CashOut();
-            break;
-        }
-        case ConsoleKey.T:
-        {
-            ShowList(kunder);
-            break;
-        }
-
-        case ConsoleKey.Q:
-        {
-            Environment.Exit(0);
-            return;
-        }
-
-    }
-
-}
 Customer AddCustomer()
 
 {
@@ -117,22 +51,21 @@ void ShowList(List<Customer> kund)
 void LogIn()
 {
 
-    Console.WriteLine("Skriv in ditt namn:");
-    var username = Console.ReadLine();
+    Console.Write("Ange ditt namn:");
+    var inputUsername = Console.ReadLine();
+    Console.WriteLine("Ange ditt lösenord:");
+    var inputPassword = Console.ReadLine();
 
-    Console.WriteLine("Skriv in ett lösenord:");
-    var password = Console.ReadLine();
-
-    foreach (var a in kunder)
+    foreach (var customer in kunder)
     {
-        if (a.Name == username && a.Password == password)
+        if (inputUsername == customer.Name)
         {
-            Console.WriteLine($"Du finns! {a.Name} ");
-            Console.ReadKey();
-        }
-        else
-        {
-            break;
+            if (customer.Password == inputPassword)
+            {
+                Console.WriteLine("Välkommen!");
+                Thread.Sleep(2000);
+                MainMenu();
+            }
         }
     }
 }
@@ -167,7 +100,17 @@ void LogOut()
 
 void Start()
 {
+    Console.WriteLine("Hej och välkommen till TruckStore!\n" +
+                      "[1]: Tryck 1 för att logga in?\n " +
+                      "[2]: Tryck 2 för att skapa en ny kund.");
+    var input = Console.ReadLine();
 
+    if (input == "1")
+    {
+        Console.WriteLine("Går till log in...");
+        Thread.Sleep(2000);
+        LogIn();
+    }
 }
 
 void CashOut()
@@ -180,6 +123,72 @@ void AddCart()
 
 }
 
+void MainMenu()
+{
+    while (true)
+    {
+
+        Console.Clear();
+        Console.WriteLine("Välkommen till min butik!");
+        Console.WriteLine("\n Var god och välj i menyn\n" +
+                          "[A] Lägg till varor. \n" +
+                          "[S] Vad finns det för varor? \n" +
+                          "[D] Lägga till produkter.\n" +
+                          "[F] Kolla i din kundvagn.\n" +
+                          "[G] Betala dina varor.\n" +
+                          "[T] Vilka kunder finns i butiken?" +
+                          "[Q] Logga ut\n" +
+                          "                      \n" +
+                          "       _______________\n" +
+                          "    _ / _ |[][][][][] | - -\n" +
+                          "   (      FoodStore   | - -\n" +
+                          "   = --OO------ - OO-- = dwb\n ");
+
+        ConsoleKeyInfo inputFromUser = Console.ReadKey(true);
+        switch (inputFromUser.Key)
+        {
+
+            case ConsoleKey.A:
+            {
+                kunder.Add(AddCustomer());
+                break;
+            }
+            case ConsoleKey.S:
+            {
+                ShowList(kunder);
+                break;
+            }
+            case ConsoleKey.D:
+            {
+                AddCart();
+                break;
+            }
+            case ConsoleKey.F:
+            {
+                CheckCart();
+                break;
+            }
+            case ConsoleKey.G:
+            {
+                CashOut();
+                break;
+            }
+            case ConsoleKey.T:
+            {
+                ShowList(kunder);
+                break;
+            }
+
+            case ConsoleKey.Q:
+            {
+                Environment.Exit(0);
+                return;
+            }
+
+        }
+
+    }
+}
 
 
 
