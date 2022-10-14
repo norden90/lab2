@@ -15,9 +15,9 @@ kunder.Add(new Customer("Knatte", "123"));
 kunder.Add(new Customer("Fnatte", "321"));
 kunder.Add(new Customer("Tjatte", "213"));
 
-var apple = new Apple("apple", 5, 0,1);
-var beverage = new Beverage("Beverage", 15, 0,2);
-var sausage = new Sausage("Sausage", 30, 0,3);
+var apple = new Apple("äpple", 5, 0,1);
+var beverage = new Beverage("Pepsi Max", 15, 0,2);
+var sausage = new Sausage("Korv", 30, 0,3);
 
 produkter.Add(apple);
 produkter.Add(beverage);
@@ -73,6 +73,7 @@ void LogIn()
                 Console.ReadKey();
                 LogIn();
             }
+
         }
     }
 
@@ -91,27 +92,13 @@ void LogIn()
             }
             else if (input == "2")
             {
-                Console.WriteLine("Skit i det då....");
+                Console.WriteLine("Det var tråkigt....");
                 attemptCustomer = null;
-                Thread.Sleep(2000);
+                Console.ReadKey();
                 Start();
             }
         }
     }
-
-
-
-Customer AddCustomer()
-
-{
-    Console.WriteLine("Skapa ditt nya konto här\n" +
-                    "Ange ditt namn"); string tempName = Console.ReadLine();
-    Console.WriteLine("Ange ett lösenord"); string tempPass = Console.ReadLine();
-
-    var kund = new Customer(tempName, tempPass);
-
-    return kund;
-}
 
 void MainMenu()
 {
@@ -155,7 +142,7 @@ void MainMenu()
             }
             case ConsoleKey.F:
             {
-                CheckCart();
+                CheckCart(loggedInCustomer.Cart);
                 break;
             }
             case ConsoleKey.G:
@@ -207,12 +194,109 @@ void ShowProducts()
 
 void AddCart()
 {
-    loggedInCustomer.Cart.Add(apple);
+    var amount = 0;
+
+    Console.WriteLine($"Vad vill du köpa {loggedInCustomer.Name}?\n" +
+                      $"[1]: Äpplen\n" +
+                      $"[2]: Pepsi Max\n" +
+                      $"[3]: Korv");
+    var input = Console.ReadLine();
+    if (input == "1")
+    {
+        Console.WriteLine("Hur många äpplen vill du lägga till?");
+        amount = int.Parse(Console.ReadLine());
+        for (int i = 0; i < amount; i++)
+        {
+            loggedInCustomer.Cart.Add(apple);
+            apple.Amount++;
+            
+        }
+
+        if (apple.Amount == 1)
+        {
+            Console.WriteLine($"Det finns {apple.Amount} {apple.Name} i din kundvagn.");
+            amount = 0;
+            Console.ReadKey();
+        }
+        else if (apple.Amount > 1)
+        {
+            Console.WriteLine($"Det finns {apple.Amount} äpplen i din kundvagn.");
+            amount = 0;
+            Console.ReadKey();
+        }
+        
+    }
+    else if (input == "2")
+    {
+        Console.WriteLine("Hur många Pepsi Max vill du lägga till?");
+        amount = int.Parse(Console.ReadLine());
+        for (int i = 0; i < amount; i++)
+        {
+            loggedInCustomer.Cart.Add(beverage);
+            beverage.Amount++;
+        }
+
+        if (beverage.Amount == 1)
+        {
+            Console.WriteLine($"Lägger till {beverage.Amount} burk {beverage.Name} i din kundvagn.");
+            amount = 0;
+            Console.ReadKey();
+        }
+        else if (beverage.Amount > 1)
+        {
+            Console.WriteLine($"Lägger till {beverage.Amount} burkar {beverage.Name} i din kundvagn.");
+            amount = 0;
+            Console.ReadKey();
+        }
+    }
+    else if (input == "3")
+    {
+        Console.WriteLine("Hur många Pepsi Max vill du lägga till?");
+        amount = int.Parse(Console.ReadLine());
+        for (int i = 0; i < amount; i++)
+        {
+            loggedInCustomer.Cart.Add(sausage);
+            sausage.Amount++;
+            
+        }
+
+        if (sausage.Amount == 1)
+        {
+            Console.WriteLine($"Lägger till {sausage.Amount} {sausage.Name} i din kundvagn.");
+            amount = 0;
+            Console.ReadKey();
+        }
+        else if (sausage.Amount > 1)
+        {
+            Console.WriteLine($"Lägger till {sausage.Amount} korvar i din kundvagn.");
+            amount = 0;
+            Console.ReadKey();
+        }
+    }
+
+    Console.WriteLine($"Har lagt till varor i din kundvagn {loggedInCustomer.Name}\n" +
+                      $"Vill du handla något mer?\n" +
+                      $"[1] Tryck 1 för Ja\n" +
+                      $"[2] Tryck 2 för nej");
+    var input2 = Console.ReadLine();
+    if (input2 == "1")
+    {
+        AddCart();
+    }
+    else if (input2 == "2")
+    {
+        MainMenu();
+    }
 }
 
-void CheckCart()
+void CheckCart(List<Products> Cart)
 {
+    foreach (var produkter in Cart)
+    {
+        Console.WriteLine(produkter.Name);
+    }
 
+    Console.ReadKey();
 }
 
 void CalcCart()
@@ -244,7 +328,7 @@ void LogOut()
     Console.WriteLine($"{loggedInCustomer.Name} loggas ut\n" +
         $"Välkommen åter!");
     loggedInCustomer = null;
-    Thread.Sleep(1000);
+    Console.ReadKey();
     Start();
 }
 
@@ -256,6 +340,18 @@ void ShowList(List<Customer> kunder)
         Console.WriteLine($"Name: {a.Name} Password: {a.Password}");
     }
     Console.ReadKey();
+}
+
+Customer AddCustomer()
+
+{
+    Console.WriteLine("Skapa ditt nya konto här\n" +
+                      "Ange ditt namn"); string tempName = Console.ReadLine();
+    Console.WriteLine("Ange ett lösenord"); string tempPass = Console.ReadLine();
+
+    var kund = new Customer(tempName, tempPass);
+
+    return kund;
 }
 
 

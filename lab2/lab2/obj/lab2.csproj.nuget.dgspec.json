@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nordf\\OneDrive\\Skrivbord\\GitHub\\lab2\\lab2\\lab2\\lab2\\lab2.csproj": {}
+    "C:\\Users\\hughmungus\\OneDrive\\Skrivbord\\GitHub\\lab2\\lab2\\lab2\\lab2\\lab2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nordf\\OneDrive\\Skrivbord\\GitHub\\lab2\\lab2\\lab2\\lab2\\lab2.csproj": {
+    "C:\\Users\\hughmungus\\OneDrive\\Skrivbord\\GitHub\\lab2\\lab2\\lab2\\lab2\\lab2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nordf\\OneDrive\\Skrivbord\\GitHub\\lab2\\lab2\\lab2\\lab2\\lab2.csproj",
+        "projectUniqueName": "C:\\Users\\hughmungus\\OneDrive\\Skrivbord\\GitHub\\lab2\\lab2\\lab2\\lab2\\lab2.csproj",
         "projectName": "lab2",
-        "projectPath": "C:\\Users\\nordf\\OneDrive\\Skrivbord\\GitHub\\lab2\\lab2\\lab2\\lab2\\lab2.csproj",
-        "packagesPath": "C:\\Users\\nordf\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nordf\\OneDrive\\Skrivbord\\GitHub\\lab2\\lab2\\lab2\\lab2\\obj\\",
+        "projectPath": "C:\\Users\\hughmungus\\OneDrive\\Skrivbord\\GitHub\\lab2\\lab2\\lab2\\lab2\\lab2.csproj",
+        "packagesPath": "C:\\Users\\hughmungus\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\hughmungus\\OneDrive\\Skrivbord\\GitHub\\lab2\\lab2\\lab2\\lab2\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\nordf\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\hughmungus\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
