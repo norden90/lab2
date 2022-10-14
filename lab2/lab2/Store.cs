@@ -269,7 +269,7 @@ void AddCart()
     {
         checkAmount++;
         Console.Clear();
-        Console.Write($"En korv kostar {sausage.Price} kr." +
+        Console.Write($"En korv kostar {sausage.Price} kr.\n" +
                           $"Hur många korvar vill du lägga till?:");
         amount = int.Parse(Console.ReadLine());
         for (int i = 0; i < amount; i++)
@@ -292,6 +292,9 @@ void AddCart()
             Console.ReadKey();
         }
     }
+
+    //loggedInCustomer.Cart.Sort();
+
 
     if (checkAmount == 0)
     {
@@ -322,6 +325,7 @@ void AddCart()
 
 void CheckCart(List<Products> cart)
 {
+
     apple.Amount = 0;
     beverage.Amount = 0;
     sausage.Amount = 0;
