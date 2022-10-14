@@ -38,11 +38,10 @@ public class Customer
 
         foreach (var produkter in Cart)
         {
-
             counter++;
             if (counter == produkter.Amount)
             {
-                message += $"{produkter.Name}: {produkter.Price * produkter.Amount}";
+                message += $" {produkter.Name}: {produkter.Price * produkter.Amount}";
                 counter = 0;
             }
         }

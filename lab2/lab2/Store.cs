@@ -47,10 +47,10 @@ void Start()
 
 void LogIn()
 {
-
+    Console.Clear();
     Console.Write("Ange ditt namn:");
     var inputUsername = Console.ReadLine();
-    Console.WriteLine("Ange ditt lösenord:");
+    Console.Write("Ange ditt lösenord:");
     var inputPassword = Console.ReadLine();
 
     var attemptCustomer = new Customer(inputUsername, inputPassword);
@@ -61,6 +61,7 @@ void LogIn()
         {
             if (attemptCustomer.Password == customer.Password)
             {
+                Console.Clear();
                 Console.WriteLine("Välkommen!");
                 loggedInCustomer = customer;
                 Console.ReadKey();
@@ -68,8 +69,9 @@ void LogIn()
             }
             else if (attemptCustomer.Password != customer.Password)
             {
+                Console.Clear();
                 Console.WriteLine($"Du skrev fel lösenord {attemptCustomer.Name}!\n" +
-                    $"Var vänligen och försök igen.");
+                                  $"Var vänligen och försök igen.");
                 Console.ReadKey();
                 LogIn();
             }
@@ -78,12 +80,12 @@ void LogIn()
     }
 
     foreach (var customer in kunder)
-    
-        if (attemptCustomer .Name != customer.Name)
+
+        if (attemptCustomer.Name != customer.Name)
         {
             Console.WriteLine($"{attemptCustomer.Name} existerar inte! Vill du skapa en ny?\n" +
-                $"[1]: Tryck 1 för ja.\n" +
-                $"[2]: Tryck 2 för nej.");
+                              $"[1]: Tryck 1 för ja.\n" +
+                              $"[2]: Tryck 2 för nej.");
             var input = Console.ReadLine();
             if (input == "1")
             {
@@ -93,12 +95,11 @@ void LogIn()
             else if (input == "2")
             {
                 Console.WriteLine("Det var tråkigt....");
-                attemptCustomer = null;
                 Console.ReadKey();
                 Start();
             }
         }
-    }
+}
 
 void MainMenu()
 {
@@ -109,9 +110,9 @@ void MainMenu()
         Console.WriteLine("Välkommen till min butik!");
         Console.WriteLine("\n Var god och välj i menyn.\n" +
                           "[A] Vad finns det för varor?\n" +
-                          "[S] Lägg till varor. \n" +
-                          "[D] Lägga till produkter.\n" +
-                          "[F] Kolla i din kundvagn.\n" +
+                          "[S] Lägg till varor.\n" +
+                          "[D] Kolla i din kundvagn.\n" +
+                          "[F] Totala kostnad för dina köp.\n" +
                           "[G] Betala dina varor.\n" +
                           "[T] Vilka kunder finns i butiken?\n" +
                           "[Q] Logga ut\n" +
@@ -137,12 +138,12 @@ void MainMenu()
             }
             case ConsoleKey.D:
             {
-                AddCart();
+                CheckCart(loggedInCustomer.Cart);
                 break;
             }
             case ConsoleKey.F:
             {
-                CheckCart(loggedInCustomer.Cart);
+                CalcCart(loggedInCustomer.Cart);
                 break;
             }
             case ConsoleKey.G:
@@ -194,16 +195,27 @@ void ShowProducts()
 
 void AddCart()
 {
+    Console.Clear();
+
+    var checkAmount = 0;
     var amount = 0;
 
-    Console.WriteLine($"Vad vill du köpa {loggedInCustomer.Name}?\n" +
-                      $"[1]: Äpplen\n" +
-                      $"[2]: Pepsi Max\n" +
-                      $"[3]: Korv");
+    Console.Write($"Ange det numret som repesenterar produkten\n" +
+                  $"\n" +
+                  $"[1]: Äpplen\n" + 
+                  $"[2]: Pepsi Max\n" +
+                  $"[3]: Korv\n" +
+                  $"\n" +
+                  $"Vad vill du köpa {loggedInCustomer.Name}?:");
+
     var input = Console.ReadLine();
+
     if (input == "1")
     {
-        Console.WriteLine("Hur många äpplen vill du lägga till?");
+        checkAmount++;
+        Console.Clear();
+        Console.Write($"Ett äpple kostar {apple.Price} kr.\n" +
+                          $"Hur många äpplen vill du lägga till?:");
         amount = int.Parse(Console.ReadLine());
         for (int i = 0; i < amount; i++)
         {
@@ -228,7 +240,11 @@ void AddCart()
     }
     else if (input == "2")
     {
-        Console.WriteLine("Hur många Pepsi Max vill du lägga till?");
+        checkAmount++;
+        Console.Clear();
+        Console.Write($"En Pepsi max kostar {beverage.Price} kr.\n" +
+                          $"Hur många Pepsi Max vill du lägga till?:");
+        
         amount = int.Parse(Console.ReadLine());
         for (int i = 0; i < amount; i++)
         {
@@ -251,7 +267,10 @@ void AddCart()
     }
     else if (input == "3")
     {
-        Console.WriteLine("Hur många Pepsi Max vill du lägga till?");
+        checkAmount++;
+        Console.Clear();
+        Console.Write($"En korv kostar {sausage.Price} kr." +
+                          $"Hur många korvar vill du lägga till?:");
         amount = int.Parse(Console.ReadLine());
         for (int i = 0; i < amount; i++)
         {
@@ -274,52 +293,82 @@ void AddCart()
         }
     }
 
-    Console.WriteLine($"Har lagt till varor i din kundvagn {loggedInCustomer.Name}\n" +
-                      $"Vill du handla något mer?\n" +
-                      $"[1] Tryck 1 för Ja\n" +
-                      $"[2] Tryck 2 för nej");
-    var input2 = Console.ReadLine();
-    if (input2 == "1")
+    if (checkAmount == 0)
     {
-        AddCart();
-    }
-    else if (input2 == "2")
-    {
+        Console.WriteLine($"{loggedInCustomer.Name}, du la ingenting i din kundvang.\n" +
+                          $"Återgår till menyn.");
+        Console.ReadKey();
         MainMenu();
     }
+    else
+    {
+        checkAmount = 0;
+        Console.Clear();
+        Console.WriteLine($"Har lagt till varor i din kundvagn {loggedInCustomer.Name}\n" +
+                          $"Vill du handla något mer?\n" +
+                          $"[1] Tryck 1 för Ja\n" +
+                          $"[2] Tryck 2 för nej");
+        var input2 = Console.ReadLine();
+        if (input2 == "1")
+        {
+            AddCart();
+        }
+        else if (input2 == "2")
+        {
+            MainMenu();
+        }
+    }
 }
 
-void CheckCart(List<Products> Cart)
+void CheckCart(List<Products> cart)
 {
-    foreach (var produkter in Cart)
+    apple.Amount = 0;
+    beverage.Amount = 0;
+    sausage.Amount = 0;
+
+    var totalProducts = 0;
+
+   
+        foreach (var products in cart)
+        {
+            products.Amount++;
+            totalProducts++;
+        }
+    
+
+    Console.WriteLine($"{loggedInCustomer.Name}s Kundvagn\n");
+
+    Console.WriteLine($"{apple.Name}: {apple.Amount} st.\n" +
+                      $"{beverage.Name}: {beverage.Amount} st.\n" +
+                      $"{sausage.Name}: {sausage.Amount} st.\n");
+    Console.ReadKey();
+
+    if (totalProducts == 0)
     {
-        Console.WriteLine(produkter.Name);
+        Console.WriteLine("Din kundvagn är tom.");
+        Console.ReadKey();
     }
 
-    Console.ReadKey();
 }
 
-void CalcCart()
+void CalcCart(List<Products> cart)
 {
     int sum = 0;
 
-    foreach (var a in kunder)
+    foreach (var products in cart)
     {
-        foreach (var s in a.Cart)
-        {
-            s.Amount++;
-            sum += s.Price;
-        }
+        sum += products.Price;
     }
     Console.WriteLine($"Din totala kostnad för alla produkter är: {sum}\n" +
-    $"Du har {apple.Amount} {apple.Name}" +
-                        $"Du har {sausage.Amount} {sausage.Name}" +
-                        $"{beverage.Amount} ");
+                        $"{apple.Name}: {apple.Amount} st.\n" +
+                        $"{sausage.Name}: {sausage.Amount} st.\n" +
+                        $"{beverage.Name}: {beverage.Amount} st.\n");
+    Console.ReadKey();
 }
 
 void CashOut()
 {
-
+    Console.WriteLine(loggedInCustomer);
 }
 
 void LogOut()

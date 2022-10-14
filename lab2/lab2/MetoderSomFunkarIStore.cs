@@ -35,9 +35,9 @@ namespace lab2;
 
 //    Console.WriteLine($"Hej {andreas.Name}! Vad vill du lägga till i din kundvagn?");
 
-    //andreas.Cart.Add(sausage);
-    //andreas.Cart.Add(apple);
-    //andreas.Cart.Add(sausage);
+//andreas.Cart.Add(sausage);
+//andreas.Cart.Add(apple);
+//andreas.Cart.Add(sausage);
 
 //    foreach (var a in kunder)
 //    {
@@ -179,4 +179,22 @@ namespace lab2;
 //        Console.ReadKey();
 //        LogIn();
 //    }
+//}
+
+//void CalcCart(List<Products> cart)
+//{
+//    int sum = 0;
+
+//    foreach (var a in kunder)
+//    {
+//        foreach (var s in a.Cart)
+//        {
+//            s.Amount++;
+//            sum += s.Price;
+//        }
+//    }
+//    Console.WriteLine($"Din totala kostnad för alla produkter är: {sum}\n" +
+//                      $"Du har {apple.Amount} {apple.Name}" +
+//                      $"Du har {sausage.Amount} {sausage.Name}" +
+//                      $"{beverage.Amount} ");
 //}
