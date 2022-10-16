@@ -30,7 +30,10 @@ public class Customer
     {
 
         var message = string.Empty;
-        var counter = 0;
+        var appleCount = 0;
+        var beverageCount = 0;
+        var sausageCount = 0;
+        
 
         message += $"Namn: {Name}\n";
         message += $"Password: {Password}\n";
@@ -38,13 +41,35 @@ public class Customer
 
         foreach (var produkter in Cart)
         {
-            counter++;
-            if (counter == produkter.Amount)
+            if (produkter.Name == "äpple")
             {
-                message += $" {produkter.Name}: {produkter.Price * produkter.Amount}";
-                counter = 0;
+                appleCount++;
+
+                if (produkter.Amount == appleCount)
+                {
+                    message += $" {produkter.Name}: {produkter.Price * appleCount} Kr.";
+                }
             }
+            else if (produkter.Name == "Pepsi Max")
+            {
+                beverageCount++;
+                if (produkter.Amount == beverageCount)
+                {
+                    message += $" {produkter.Name}: {produkter.Price * beverageCount} Kr.";
+                }
+            }
+            else if (produkter.Name == "korv")
+            {
+                sausageCount++;
+                if (produkter.Amount == sausageCount)
+                {
+                    message += $" {produkter.Name}: {produkter.Price * sausageCount} Kr.";
+                }
+            }
+
         }
+        
+
         return message;
     }
 }

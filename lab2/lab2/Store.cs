@@ -17,7 +17,7 @@ kunder.Add(new Customer("Tjatte", "213"));
 
 var apple = new Apple("äpple", 5, 0,1);
 var beverage = new Beverage("Pepsi Max", 15, 0,2);
-var sausage = new Sausage("Korv", 30, 0,3);
+var sausage = new Sausage("korv", 30, 0,3);
 
 produkter.Add(apple);
 produkter.Add(beverage);
@@ -373,6 +373,9 @@ void CalcCart(List<Products> cart)
 void CashOut()
 {
     Console.WriteLine(loggedInCustomer);
+    Console.ReadKey();
+
+    //mer kod
 }
 
 void LogOut()
