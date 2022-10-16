@@ -387,7 +387,7 @@ void CashOut()
         Thread.Sleep(1000);
         Console.Clear();
         Console.WriteLine($"Ditt kör har gått igenom! Tack för att du handlade här på FoodStore\n" +
-                          $"Välkommen åter {loggedInCustomer}\n" +
+                          $"Välkommen åter {loggedInCustomer.Name}\n" +
                           $"Önskar dig en fin dag.");
 
         loggedInCustomer.Cart.Clear();
