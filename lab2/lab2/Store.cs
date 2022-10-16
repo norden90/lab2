@@ -375,7 +375,32 @@ void CashOut()
     Console.WriteLine(loggedInCustomer);
     Console.ReadKey();
 
-    //mer kod
+    Console.WriteLine($"Vill du köpa dina varor?\n" +
+                      "[1]: Tryck 1 för ja\n" +
+                      "[2]: Tryck 2 för nej");
+    var input = Console.ReadLine();
+
+    if (input == "1")
+    {
+        Console.Clear();
+        Console.Write($"Scannar dina varor...");
+        Thread.Sleep(1000);
+        Console.Clear();
+        Console.WriteLine($"Ditt kör har gått igenom! Tack för att du handlade här på FoodStore\n" +
+                          $"Välkommen åter {loggedInCustomer}\n" +
+                          $"Önskar dig en fin dag.");
+
+        loggedInCustomer.Cart.Clear();
+        loggedInCustomer=null;
+        Console.ReadKey();
+        Start();
+    }
+    else if (input == "2")
+    {
+        Console.WriteLine($"Återgår till menyn");
+        Thread.Sleep(1000);
+        MainMenu();
+    }
 }
 
 void LogOut()
