@@ -32,7 +32,7 @@ public class Customer
     //    if (password == Password)
 
     //    return true;
-    //} Att åtgärda för godkänt
+    //} Att åtgärda för godkänt test
     public override string ToString()
     {
 
