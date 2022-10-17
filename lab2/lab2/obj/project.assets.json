@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hughmungus\\OneDrive\\Skrivbord\\GitHub\\lab2\\lab2\\lab2\\lab2\\lab2.csproj",
+      "projectUniqueName": "C:\\Users\\hughmungus\\OneDrive\\Skrivbord\\KOPIA LAB2.0\\lab2\\lab2\\lab2\\lab2\\lab2.csproj",
       "projectName": "lab2",
-      "projectPath": "C:\\Users\\hughmungus\\OneDrive\\Skrivbord\\GitHub\\lab2\\lab2\\lab2\\lab2\\lab2.csproj",
+      "projectPath": "C:\\Users\\hughmungus\\OneDrive\\Skrivbord\\KOPIA LAB2.0\\lab2\\lab2\\lab2\\lab2\\lab2.csproj",
       "packagesPath": "C:\\Users\\hughmungus\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hughmungus\\OneDrive\\Skrivbord\\GitHub\\lab2\\lab2\\lab2\\lab2\\obj\\",
+      "outputPath": "C:\\Users\\hughmungus\\OneDrive\\Skrivbord\\KOPIA LAB2.0\\lab2\\lab2\\lab2\\lab2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\hughmungus\\AppData\\Roaming\\NuGet\\NuGet.Config",

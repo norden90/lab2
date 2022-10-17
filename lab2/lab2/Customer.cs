@@ -26,6 +26,13 @@ public class Customer
         _cart = new List<Products>();
     }
 
+    //public string VerifyPassword(string password)
+    //{
+
+    //    if (password == Password)
+
+    //    return true;
+    //} Att åtgärda för godkänt
     public override string ToString()
     {
 
