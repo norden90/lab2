@@ -42,6 +42,7 @@ void Start()
     else if (input == "2")
     {
         kunder.Add(AddCustomer());
+        LogIn();
     }
 }
 
@@ -53,13 +54,11 @@ void LogIn()
     Console.Write("Ange ditt lösenord:");
     var inputPassword = Console.ReadLine();
 
-    var attemptCustomer = new Customer(inputUsername, inputPassword);
-
     foreach (var customer in kunder)
     {
-        if (attemptCustomer.Name == customer.Name)
+        if (inputUsername == customer.Name)
         {
-            if (attemptCustomer.Password == customer.Password)
+            if (customer.VerifyPassword(inputPassword))
             {
                 Console.Clear();
                 Console.WriteLine("Välkommen!");
@@ -67,10 +66,10 @@ void LogIn()
                 Console.ReadKey();
                 MainMenu();
             }
-            else if (attemptCustomer.Password != customer.Password)
+            else
             {
                 Console.Clear();
-                Console.WriteLine($"Du skrev fel lösenord {attemptCustomer.Name}!\n" +
+                Console.WriteLine($"Du skrev fel lösenord {inputUsername}!\n" +
                                   $"Var vänligen och försök igen.");
                 Console.ReadKey();
                 LogIn();
@@ -81,9 +80,9 @@ void LogIn()
 
     foreach (var customer in kunder)
 
-        if (attemptCustomer.Name != customer.Name)
+        if (inputPassword != customer.Name)
         {
-            Console.WriteLine($"{attemptCustomer.Name} existerar inte! Vill du skapa en ny?\n" +
+            Console.WriteLine($"{inputUsername} existerar inte! Vill du skapa en ny?\n" +
                               $"[1]: Tryck 1 för ja.\n" +
                               $"[2]: Tryck 2 för nej.");
             var input = Console.ReadLine();
@@ -293,8 +292,6 @@ void AddCart()
         }
     }
 
-    //loggedInCustomer.Cart.Sort();
-
 
     if (checkAmount == 0)
     {
@@ -408,7 +405,6 @@ void LogOut()
     Console.Clear();
     Console.WriteLine($"{loggedInCustomer.Name} loggas ut\n" +
         $"Välkommen åter!");
-    loggedInCustomer = null;
     Console.ReadKey();
     Start();
 }
@@ -418,7 +414,7 @@ void ShowList(List<Customer> kunder)
 
     foreach (var a in kunder)
     {
-        Console.WriteLine($"Name: {a.Name} Password: {a.Password}");
+        Console.WriteLine($"Name: {a.Name}");
     }
     Console.ReadKey();
 }
@@ -434,6 +430,5 @@ Customer AddCustomer()
 
     return kund;
 }
-
 
 

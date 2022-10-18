@@ -10,7 +10,7 @@ public class Customer
     {
         get { return _name; }
     }
-    public string Password
+    private string Password
     {
         get { return _password; }
     }
@@ -26,13 +26,11 @@ public class Customer
         _cart = new List<Products>();
     }
 
-    //public string VerifyPassword(string password)
-    //{
-
-    //    if (password == Password)
-
-    //    return true;
-    //} Att åtgärda för godkänt test
+    public bool VerifyPassword(string pw)
+    {
+        return Password == pw;
+    }
+    
     public override string ToString()
     {
 
